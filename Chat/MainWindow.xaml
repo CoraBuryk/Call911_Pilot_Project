@@ -1,0 +1,495 @@
+﻿<Window x:Class="Chat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Chat"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local1="clr-namespace:Chat.UserControl" xmlns:local="clr-namespace:Chat" xmlns:control="clr-namespace:Chat.Control"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        ResizeMode="CanResize"  Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" 
+        ScrollViewer.HorizontalScrollBarVisibility="Auto">
+
+    <Grid x:Name="MainGrid" MouseDown="Border_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Background="#100E17" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition x:Name="Main"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <!--Button close and sender name-->
+            <Grid>
+                <StackPanel Orientation="Horizontal" Height="80" Background="#FFE4E4E4">
+                    <StackPanel.Effect>
+                        <DropShadowEffect BlurRadius="30" ShadowDepth="1"/>
+                    </StackPanel.Effect>
+                    <Border Width="10" Height="10" HorizontalAlignment="Right" Margin="15" Background="Green" CornerRadius="15" VerticalAlignment="Center" x:Name="Color" Visibility="Collapsed"/>
+                    <TextBlock FontSize="28" VerticalAlignment="Center" x:Name="Name"/>
+                </StackPanel>
+
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Background="#D94448" BorderBrush="White" Height="30" Margin="0,25,110,25" HorizontalAlignment="Right" Width="30" x:Name="Call" Visibility="Collapsed">
+                    <materialDesign:PackIcon Kind="Call"/>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Background="#D94448" BorderBrush="White" Height="30" Width="30" Margin="0,25,70,25" HorizontalAlignment="Right" x:Name="VideoCall" Visibility="Collapsed">
+                    <materialDesign:PackIcon Kind="VideoCall"/>
+                </Button>
+
+                <Button Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+                        ToolTip="Close" x:Name="btnExit" Click="btnExit_Click"  Height="23" Width="23" BorderBrush="#D94448" Margin="0,11,22,46" HorizontalAlignment="Right">
+                    <materialDesign:PackIcon Kind="Close" Foreground="Black" Width="20" Height="20"/>
+                </Button>
+            </Grid>
+
+           
+            <!--Bubbles-->
+            <UserControl Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        
+                        <StackPanel>
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent0" Visibility="Collapsed"/>
+                        </Border>
+                      
+                            
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received0" Visibility="Collapsed"/>
+                        </Border>
+                        </StackPanel>
+                            
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent1" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received1" Visibility="Collapsed"/>
+                        </Border>
+                        
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent2" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received2" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent3" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received3" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent4" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received4" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent5" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received5" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent6" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received6" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent7" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received7" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent8" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received8" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent9" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received9" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent10" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received10" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent11" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received11" Visibility="Collapsed"/>
+                        </Border>
+                        
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent12" Visibility="Collapsed"/>
+                        </Border>
+                            
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received12" Visibility="Collapsed"/>
+                        </Border>
+                       
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent13" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received13" Visibility="Collapsed"/>
+                        </Border>
+
+                        <StackPanel>
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent14" Visibility="Collapsed"/>
+                        </Border>
+                        <Image Source="Image/Image1.webp" Visibility="Collapsed" HorizontalAlignment="Left" Height="250" x:Name="Image1"/>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received14" Visibility="Collapsed"/>
+                        </Border>
+                        </StackPanel>
+                        
+                        
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent15" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received15" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent16" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received16" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent17" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received17" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent18" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received18" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent19" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received19" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent20" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received20" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent21" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received21" Visibility="Collapsed"/>
+                        </Border>
+
+                        <StackPanel>
+                            <Border Background="LightCoral" CornerRadius="15 15 15 0" Margin="10,12,10,12" Visibility="Collapsed" Grid.RowSpan="3" Width="330" HorizontalAlignment="Left" Height="50" x:Name="Play1">
+                                <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}" x:Name="Sound1" Visibility="Visible"  Background="#D94448" BorderBrush="White" Height="30" Width="30" Margin="20,10,280,10" Click ="Sound1_Click">
+                                    <materialDesign:PackIcon Kind="Play"/>
+                                </Button>
+                            </Border>
+                        </StackPanel>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent22" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received22" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent23" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received23" Visibility="Collapsed"/>
+                        </Border>
+
+                        <StackPanel>
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent24" Visibility="Collapsed"/>
+                        </Border>
+                            <Image Source="Image/Image2.jpg" Visibility="Collapsed" HorizontalAlignment="Left" Height="250" x:Name="Image2"/>
+                            <Image Source="Image/Image3.jpg" Visibility="Collapsed" HorizontalAlignment="Left" Height="250" x:Name="Image3"/>
+                            <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received24" Visibility="Collapsed"/>
+                        </Border>
+                        </StackPanel>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent25" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received25" Visibility="Collapsed"/>
+                        </Border>
+
+                        <StackPanel>
+                        <Border Background="LightCoral" CornerRadius="15 15 15 0" Margin="10,12,10,12" Visibility="Collapsed" Grid.RowSpan="3" Width="330" HorizontalAlignment="Left" Height="50" x:Name="Play2">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}" x:Name="Sound2" Visibility="Visible"  Background="#D94448" BorderBrush="White" Height="30" Width="30" Margin="20,10,280,10" Click="Sound2_Click">
+                                <materialDesign:PackIcon Kind="Play"/>
+                            </Button>
+                        </Border>
+                        </StackPanel>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="Sent26" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Received26" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <control:UserControlMessageError x:Name="Error1" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <control:UserControlMessageError x:Name="Error2" Visibility="Collapsed"/>
+                        </Border>
+
+                        <Border>
+                            <local1:UserControlMessageSent HorizontalAlignment="Right" x:Name="StartMessage" Visibility="Collapsed"/>
+                        </Border>
+                        
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Message1" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Message2" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Message3" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Message4" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Message5" Visibility="Collapsed"/>
+                        </Border>
+                        <Border>
+                            <local:UserControlMessageReceived HorizontalAlignment="Left" x:Name="Message6" Visibility="Collapsed"/>
+                        </Border>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </UserControl>
+
+            <!--Chose buttons-->
+            <Border Grid.Row="2" Background="White" VerticalAlignment="Bottom" x:Name="Border" Height="60">
+                <Grid Margin="0 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column ="0" MaxHeight="80" Background="White" BorderBrush="LightCoral" Click="Left_ButtonClick" x:Name="Left_btn"  Visibility="Collapsed" VerticalAlignment="Stretch">
+                        <TextBlock x:Name="Left" Foreground="Black" TextAlignment="Center" FontSize="15" FontFamily="Times New Roman "/>
+                    </Button>
+                    <Button Grid.Column ="1" MaxHeight="80" Background="White" BorderBrush="LightCoral" Click="Right_ButtonClick" x:Name="Right_btn" Visibility="Collapsed" VerticalAlignment="Stretch">
+                        <TextBlock x:Name="Right" Foreground="Black" TextAlignment="Center" FontSize="15" FontFamily="Times New Roman "/>
+                    </Button>
+
+                    <Button Grid.Column="4" Background="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" BorderBrush="#D94448" Height="30" Width="30" RenderTransformOrigin="0.483,0.55" Margin="15,0,5,0"
+                            x:Name="Send" Visibility="Collapsed">
+                        <materialDesign:PackIcon Kind="Send" Foreground="#D94448" />
+                    </Button>
+                    <Button Grid.Column="3" Background="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniButton}"  BorderBrush="#D94448" Height="30" Width="30" Margin="25,0,45,0" Grid.ColumnSpan="2"
+                            x:Name="Attachment" Visibility="Collapsed">
+                        <materialDesign:PackIcon Kind="Attachment" Foreground="#D94448"/>
+                    </Button>
+                    <Button Background="{x:Null}" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniButton}"  BorderBrush="#D94448" Height="30" Width="30" Margin="40,0,30,0" Grid.ColumnSpan="2" 
+                            x:Name="Smiley" Visibility="Collapsed">
+                        <materialDesign:PackIcon Kind="Smiley" Foreground="#D94448"/>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <StackPanel Grid.Column="0" Background="LightCoral" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal" Background="#100E17">
+                <Image Width="210" Height="80" Source="Icon/logo.png"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="PlusCircle" Width="24" Height="24" Background="#100E17" Foreground="#D94448"/>
+                </Button>
+            </StackPanel>
+            <TextBox Margin="20 10" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="SEARCH" Foreground="White"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Grid.Column="0" Click="History_ButtonClick">
+                    <materialDesign:PackIcon Kind="History" Foreground="White"/>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Grid.Column="1" Click="People_ButtonClick">
+                    <materialDesign:PackIcon Kind="People" Foreground="White"/>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Grid.Column="2" Click="Contacts_ButtonClick">
+                    <materialDesign:PackIcon Kind="Contacts" Foreground="White"/>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Grid.Column="3" Click="Archive_ButtonClick">
+                    <materialDesign:PackIcon Kind="Archive" Foreground="White"/>
+                </Button>
+            </Grid>
+        </StackPanel>
+        
+
+        <!--for Unknown-->
+        <Button Height="70" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Click="Unknown_ButtonClick" Margin="0,170,0,210" Grid.RowSpan="2" VerticalAlignment="Top" x:Name="Unknown" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="40" Height="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Icon\face.jpg"/>
+                    </Border.Background>
+                </Border>
+                <Border Width="8" Height="8" VerticalAlignment="Bottom" Margin="0,0,7,3" CornerRadius="15" Background="LightGreen"/>
+
+                <StackPanel Grid.ColumnSpan="3" Margin="10,-10,18,10">
+                    <TextBlock Text="Unknown" Width="146"/>
+                    <TextBlock Text="..." Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11" Width="143"/>
+                </StackPanel>
+
+                <Border Grid.Column="1" Width="20" Height="20" CornerRadius="15" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="140,0,0,0" Grid.ColumnSpan="2">
+                    <TextBlock FontSize="11" Text="1" Foreground="#D94448" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Button>
+
+        <!--for Allison-->
+        <Button Height="70" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Click="Allison_ButtonClick" Margin="0,240,0,140" Grid.RowSpan="2" VerticalAlignment="Top" x:Name="Allison" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="14*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="40" Height="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Icon/face2.jpg"/>
+                    </Border.Background>
+                </Border>
+                <Border Width="8" Height="8" VerticalAlignment="Bottom" Margin="0,0,25,3" HorizontalAlignment="Right" CornerRadius="15" Background="LightGreen" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="10,-10,20,10" Grid.RowSpan="2" Grid.Column="1">
+                    <TextBlock Text="Allison" Margin="10 0" x:Name="Name1"/>
+                    <TextBlock Text="Bye" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+
+                <Border Grid.Column="2" Width="20" Height="20" CornerRadius="15" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="139,2,0,0" Grid.RowSpan="2">
+                    <TextBlock FontSize="11" Text="1" Foreground="#D94448" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Button>
+
+        <!--for Ken-->
+
+        <Button Height="70" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Click="Ken_ButtonClick" Margin="0,310,0,70" Grid.RowSpan="2" VerticalAlignment="Top" x:Name="Ken" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="40" Height="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Icon/face3.jpg"/>
+                    </Border.Background>
+                </Border>
+                <Border Width="8" Height="8" VerticalAlignment="Bottom" Margin="0,0,25,3" HorizontalAlignment="Right" CornerRadius="15" Background="LightGreen"/>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="28,-10,20,10">
+                    <TextBlock Text="Ken" Margin="10 0" x:Name="Name2"/>
+                    <TextBlock Text="Got it" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+
+                <Border Grid.Column="1" Width="20" Height="20" CornerRadius="15" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="139,5,0,0" Grid.ColumnSpan="2">
+                    <TextBlock FontSize="11" Text="2" Foreground="#D94448" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Button>
+
+        <!--for Trace-->
+
+        <Button Height="70" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Click="Trace_ButtonClick" Margin="0,380,0,11" Grid.RowSpan="2" VerticalAlignment="Top" x:Name="Trace" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5"/>
+                    <ColumnDefinition Width="47.5"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Border Height="40" Width="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Icon/face4.jpg"/>
+                    </Border.Background>
+                </Border>
+                <Border Width="8" Height="8" VerticalAlignment="Bottom" Margin="0,0,25,3" HorizontalAlignment="Right" CornerRadius="15" Background="LightGreen" Grid.Column="1"/>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="26,-10,20,10" Grid.Column="1">
+                    <TextBlock Text="Trace" Margin="10 0" x:Name="Name3"/>
+                    <TextBlock Text="Don't forget about it!" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+
+                <Border Grid.Column="2" Width="20" Height="20" CornerRadius="15" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="138,0,0,0" Grid.ColumnSpan="2">
+                    <TextBlock FontSize="11" Text="6" Foreground="#D94448" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Button>
+    </Grid>
+</Window>

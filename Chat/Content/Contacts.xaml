@@ -1,0 +1,145 @@
+﻿<Window x:Class="Chat.Contacts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Contacts" Height="350" Width="350"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="CanResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="WhiteSmoke" Offset="1"/>
+                <GradientStop Color="LightCoral" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="300" VerticalAlignment="Top" CornerRadius="0,0,180,0" Background="#100E17" MouseDown="Border_MouseDown"/>
+
+        <ListView Height="63" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Margin="15,33,65,0" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="14*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="40" Height="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\Project\Login\Chat\Icon\face2.jpg"/>
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="30,-6,0,6" Grid.RowSpan="2" Grid.Column="1">
+                    <TextBlock Text="Allison" Margin="10 0" x:Name="Name1"/>
+                    <TextBlock Text="718(80)618-43-596" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </ListView>
+
+        <ListView Height="58" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Margin="15,86,65,0" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="40" Height="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\Project\Login\Chat\Icon\face3.jpg"/>
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="48,-10,0,10">
+                    <TextBlock Text="Ken" Margin="10 0" x:Name="Name2"/>
+                    <TextBlock Text="110(14)321-68-136" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </ListView>
+
+        <ListView Height="58" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Margin="15,142,65,0" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5"/>
+                    <ColumnDefinition Width="47.5"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Border Height="40" Width="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\Project\Login\Chat\Icon\face4.jpg"/>
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="44,-10,11,10" Grid.Column="1">
+                    <TextBlock Text="Trace" Margin="10 0" x:Name="Name3"/>
+                    <TextBlock Text="539(045)871-96-241" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </ListView>
+
+        <ListView Height="62" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Margin="15,251,65,0" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="14*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="40" Height="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\Project\Login\Chat\Icon\face5.jpg"/>
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="30,-6,0,6" Grid.RowSpan="2" Grid.Column="1">
+                    <TextBlock Text="Frank" Margin="10 0"/>
+                    <TextBlock Text="155(7709)070-08-829" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </ListView>
+
+        <ListView Height="58" Foreground="White" Background="LightCoral" Width="270" BorderBrush="LightCoral" Margin="15,195,65,0" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Center" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="14*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="40" Height="40" CornerRadius="25" BorderBrush="White" BorderThickness="0.6" Margin="-10,-10,20,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\Project\Login\Chat\Icon\face6.jpg"/>
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Grid.ColumnSpan="2" Margin="30,-6,0,6" Grid.RowSpan="2" Grid.Column="1">
+                    <TextBlock Text="Monica" Margin="10 0"/>
+                    <TextBlock Text="25(950)422-83-682" Margin="10 0" TextTrimming="CharacterEllipsis" Opacity="0.6" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </ListView>
+
+        <Button Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+                        ToolTip="Close" Click="Ok_Click" Height="23" Width="23" BorderBrush="#D94448" Margin="0,0,15,310" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <materialDesign:PackIcon Kind="Close" Foreground="White" Width="20" Height="20" HorizontalAlignment="Center"/>
+        </Button>
+    </Grid>
+</Window>

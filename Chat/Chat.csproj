@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Hystory.xaml.cs~RF9c7fbd6.TMP" />
+    <None Remove="Icon\face.jpg" />
+    <None Remove="Icon\face1.jpg" />
+    <None Remove="Icon\face2.jpg" />
+    <None Remove="Icon\face3.jpg" />
+    <None Remove="Icon\face4.jpg" />
+    <None Remove="Icon\face5.jpg" />
+    <None Remove="Icon\face6.jpg" />
+    <None Remove="Icon\logo.png" />
+    <None Remove="Image\Iamge1.webp" />
+    <None Remove="Image\Image1.webp" />
+    <None Remove="Image\Image2.jpg" />
+    <None Remove="Image\Image3.jpg" />
+    <None Remove="Sounds\message.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Project\Project.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icon\face.jpg" />
+    <Resource Include="Icon\face1.jpg" />
+    <Resource Include="Icon\face2.jpg" />
+    <Resource Include="Icon\face3.jpg" />
+    <Resource Include="Icon\face4.jpg" />
+    <Resource Include="Icon\face5.jpg" />
+    <Resource Include="Icon\face6.jpg" />
+    <Resource Include="Icon\logo.png" />
+    <Resource Include="Image\Image1.webp" />
+    <Resource Include="Image\Image2.jpg" />
+    <Resource Include="Image\Image3.jpg" />
+  </ItemGroup>
+
+</Project>
